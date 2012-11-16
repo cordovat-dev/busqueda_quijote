@@ -27,7 +27,24 @@ if [ $CAPITULO -eq 1 ]; then
 else
 	cd $RUTA
 	#grep --color=auto -niA2 -B2 $1 ${RUTA}/qui*
-	grep --color=auto -niA2 -B2 "$*" cap/T* 
+
+	I=`grep --color=auto -niA2 -B2 "$*" cap/T1* | wc -l`
+	if [ $I -gt 0 ]; then
+		echo
+		echo =========== TOMO I ===========
+		echo
+		grep --color=auto -niA2 -B2 "$*" cap/T1* 
+		echo
+	fi
+
+	I=`grep --color=auto -niA2 -B2 "$*" cap/T2* | wc -l`
+	if [ $I -gt 0 ]; then
+		echo
+		echo =========== TOMO II ===========
+		echo
+		grep --color=auto -niA2 -B2 "$*" cap/T2* 
+		echo
+	fi
 fi
 
 
