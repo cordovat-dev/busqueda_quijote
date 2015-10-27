@@ -53,7 +53,7 @@ else
 		echo
 		echo =========== TOMO I ===========
 		echo
-		egrep --color=auto -niA2 -B2 "$*" cap/T1* 
+		egrep --color=auto -niA2 -B2 -T "$*" cap/T1* 
 		echo
 	fi
 
@@ -62,7 +62,7 @@ else
 		echo
 		echo =========== TOMO II ===========
 		echo
-		egrep --color=auto -niA2 -B2 "$*" cap/T2* 
+		egrep --color=auto -niA2 -B2 -T "$*" cap/T2* 
 		echo
 	fi
 fi
