@@ -46,23 +46,22 @@ elif [ $CAPITULO -eq 1 ]; then
 
 else
 	cd $RUTA
-	#grep --color=auto -niA2 -B2 $1 ${RUTA}/qui*
 
-	I=`egrep --color=auto -niA2 -B2 "$*" cap/T1* | wc -l`
-	if [ $I -gt 0 ]; then
+	I=`egrep -l "$*" cap/T1*|wc -l`
+	if [ "$I" -gt 0 ]; then
 		echo
 		echo =========== TOMO I ===========
 		echo
-		egrep --color=auto -niA2 -B2 -T "$*" cap/T1* 
+		egrep --color=auto -niC2 -T "$*" cap/T1* 
 		echo
 	fi
 
-	I=`egrep --color=auto -niA2 -B2 "$*" cap/T2* | wc -l`
-	if [ $I -gt 0 ]; then
+	I=`egrep -l "$*" cap/T2*|wc -l`
+	if [ "$I" -gt 0 ]; then
 		echo
 		echo =========== TOMO II ===========
 		echo
-		egrep --color=auto -niA2 -B2 -T "$*" cap/T2* 
+		egrep --color=auto -niC2 -T "$*" cap/T2* 
 		echo
 	fi
 fi
