@@ -47,7 +47,7 @@ elif [ $CAPITULO -eq 1 ]; then
 else
 	cd $RUTA
 
-	I=`egrep -l "$*" cap/T1*|wc -l`
+	I=`egrep -li "$*" cap/T1*|wc -l`
 	if [ "$I" -gt 0 ]; then
 		echo
 		echo =========== TOMO I ===========
@@ -56,7 +56,7 @@ else
 		echo
 	fi
 
-	I=`egrep -l "$*" cap/T2*|wc -l`
+	I=`egrep -li "$*" cap/T2*|wc -l`
 	if [ "$I" -gt 0 ]; then
 		echo
 		echo =========== TOMO II ===========
